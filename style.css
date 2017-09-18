@@ -1,0 +1,89 @@
+.container {
+	position: relative;
+	width: 300px;
+	margin: 2em auto;
+	text-align: center;
+}
+
+p {
+	font-family: 'Teko', sans-serif;
+	font-size: 100px;
+	z-index: 1;
+	
+}
+
+span.after,
+span.before{
+/* 	content: ' '; */
+	position: absolute;
+	z-index: -1
+}
+
+.container .after {
+	top: 12%;
+	left: 43%;
+	width: 52%;
+	height: 65%;
+	background: red;
+	border-radius: 25px / 30px;
+/* 	animation: mv 1s linear forwards; */
+
+}
+
+.container span.tube {
+	color: #FFF;
+	margin-left: 10px;
+/* 	animation: textcolor 0.30s linear forwards; */
+}
+	@keyframes textcolor {
+  100%  {color: #000;}}
+
+
+
+
+.container span.before {
+	background: red;
+	top: 32.5%;
+	left: -20%;
+	border: 18px solid transparent;
+	border-left: 30px solid #FFF;
+	z-index: 2;
+	color: #FFF;
+	visibility: hidden;
+/* 	animation: visibilityBefore 1s linear 0.85s forwards; */
+
+}
+
+@keyframes mv {
+	10%{transform: translatex(-10px);}
+	50%{transform: translatex(-50px);}
+	100% {
+	top: 23%;
+	width: 100px;
+	height: 65px;
+	border-radius: 15px / 20px;
+	transform: translatex(-230px);
+	}}
+
+	@keyframes visibilityBefore {
+  100%  {visibility: visible;}}
+
+
+.container:hover{cursor: pointer;}
+.container:hover span.tube{
+	animation: textcolor 0.30s linear forwards;
+}
+
+.container:hover span.before{
+	animation: visibilityBefore 1s linear 0.85s forwards;
+}
+
+.container:hover span.after{
+	animation: mv 1s linear forwards;
+}
+
+p.msg {
+font-family: 'Amatic SC', cursive;
+	font-size: 50px;
+	color: #40356F;
+}
